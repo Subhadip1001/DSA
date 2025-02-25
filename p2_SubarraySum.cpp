@@ -17,6 +17,22 @@ void BruteForceApproach(int arr[], int sz){
     cout << "Max sum of subarray is : " << maxSum;
 }
 
+// Kadanse's Algorithm
+int kadanseAlgo(int arr[], int sz){
+    int maxSum = INT_MIN;
+    int currentSum = 0;
+
+    for(int i=0; i<sz; i++){
+        currentSum += arr[i];
+        maxSum = max(maxSum, currentSum);
+        if(currentSum < 0){
+            currentSum = 0;
+        }
+    }
+
+    return maxSum;
+}
+
 int main(){
     int n;
     cout << "Enter array size: ";
@@ -28,5 +44,8 @@ int main(){
         cin >> arr[i];
     }
     BruteForceApproach(arr, n);
+
+    // Kadanse's Algorithm
+    cout << "\nMax sum of subarray is : " << kadanseAlgo(arr, n);
     return 0;
 }
