@@ -29,7 +29,7 @@ int allocateBooks(vector<int> &arr,int n, int m){
 
     int sum=0;
     for(int i=0; i<n; i++){
-        sum += arr[i];
+        sum += arr[i]; // range of possible number
     }
 
     int ans = -1;
@@ -50,7 +50,7 @@ int allocateBooks(vector<int> &arr,int n, int m){
 
 int main(){
     vector<int>arr = {2, 1, 3, 4};
-    int n = 4, m = 2;
+    int n = 4, m = 2; // n = number of books, m = number of students
 
     cout << allocateBooks(arr, n, m) << endl;
     return 0;
