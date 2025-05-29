@@ -41,9 +41,34 @@ class List{
         }
     }
 
+    void insert(int val, int pos){
+        if(pos < 0){
+            cout << "Invalid postion\n";
+            return;
+        }
+
+        if(pos == 0){
+            push_front(val);
+            return;
+        }
+
+        Node* temp = head;
+        for(int i=0; i<pos-1; i++){
+            if(temp == NULL){
+                cout << "Invaild position\n";
+                return;
+            }
+            temp = temp->next;
+        }
+        
+        Node* newNode = new Node(val);
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
+
     void pop_front(){
         if(head == NULL){
-            cout << "No Linked List" << endl;
+            cout << "Empty Linked List" << endl;
             return;
         }
 
@@ -56,7 +81,7 @@ class List{
 
     void pop_back(){
         if(head == NULL){
-            cout << "No Linked List" << endl;
+            cout << "Empty Linked List" << endl;
             return;
         }
 
@@ -84,13 +109,10 @@ class List{
 
 int main(){
     List ll;
-    ll.push_front(1);
-    ll.push_front(2);
     ll.push_front(3);
-    ll.push_back(4);
-    ll.pop_front();
-    ll.printLl();
-    ll.pop_back();
+    ll.push_front(2);
+    ll.push_front(1);
+    ll.insert(4, 2);
     ll.printLl();
     return 0;
 }
