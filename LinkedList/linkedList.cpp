@@ -31,6 +31,16 @@ class List{
         }
     }
 
+    void push_back(int val){
+        Node* newNode = new Node(val);
+        if(head == NULL){
+            head = tail = newNode;
+        }else{
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+
     void printLl(){
         Node* temp = head;
         cout << "Linked list is :" << endl;
@@ -47,6 +57,7 @@ int main(){
     ll.push_front(1);
     ll.push_front(2);
     ll.push_front(3);
+    ll.push_back(4);
     ll.printLl();
     return 0;
 }
