@@ -41,11 +41,41 @@ class List{
         }
     }
 
+    void pop_front(){
+        if(head == NULL){
+            cout << "No Linked List" << endl;
+            return;
+        }
+
+        Node* temp = head;
+        head = head->next;
+
+        temp->next = NULL;
+        delete temp;
+    }
+
+    void pop_back(){
+        if(head == NULL){
+            cout << "No Linked List" << endl;
+            return;
+        }
+
+        Node* temp = head;
+        while (temp->next != tail){
+            temp = temp->next;
+        }
+
+        temp->next = NULL;
+        delete tail;
+        tail = temp;
+        
+    }
+
     void printLl(){
         Node* temp = head;
         cout << "Linked list is :" << endl;
         while(temp != NULL){
-            cout << temp->data << "->";
+            cout << temp->data << " -> ";
             temp = temp->next;
         }
         cout << "NULL" << endl;
@@ -58,6 +88,9 @@ int main(){
     ll.push_front(2);
     ll.push_front(3);
     ll.push_back(4);
+    ll.pop_front();
+    ll.printLl();
+    ll.pop_back();
     ll.printLl();
     return 0;
 }
