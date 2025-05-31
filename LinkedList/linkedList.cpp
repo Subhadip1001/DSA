@@ -96,6 +96,7 @@ class List{
         
     }
 
+    // LeetCode : 206
     void reverse(){
         Node* prev = NULL;
         Node* curr = head;
@@ -109,6 +110,19 @@ class List{
             curr = next;
         }
         head = prev;
+    }
+
+    // LeetCode : 876
+    int middleOfTheLl(){
+        Node* slow = head;
+        Node* fast = head;
+
+        while(fast!=NULL && fast->next!=NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        return slow->data;
     }
 
     void printLl(){
@@ -128,9 +142,15 @@ int main(){
     ll.push_front(2);
     ll.push_front(1);
     ll.insert(4, 2);
+    ll.push_back(5);
     ll.printLl();
+
+    int middle_value = ll.middleOfTheLl();
+    cout << "Middle of this Linked List is : " << middle_value << endl;
 
     ll.reverse();
     ll.printLl();
+
+
     return 0;
 }
