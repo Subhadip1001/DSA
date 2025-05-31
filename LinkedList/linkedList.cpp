@@ -96,6 +96,21 @@ class List{
         
     }
 
+    void reverse(){
+        Node* prev = NULL;
+        Node* curr = head;
+        Node* next = NULL;
+
+        while (curr != NULL){
+            next = curr->next;
+            curr->next = prev;
+
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     void printLl(){
         Node* temp = head;
         cout << "Linked list is :" << endl;
@@ -113,6 +128,9 @@ int main(){
     ll.push_front(2);
     ll.push_front(1);
     ll.insert(4, 2);
+    ll.printLl();
+
+    ll.reverse();
     ll.printLl();
     return 0;
 }
