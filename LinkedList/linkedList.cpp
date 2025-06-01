@@ -125,6 +125,28 @@ class List{
         return slow->data;
     }
 
+    // LeetCode: 141 & 142
+    // Have any cycle in this Linked List then return where start cycle
+    int cycleInLl(){
+        Node* slow = head;
+        Node* fast = head;
+
+        while (fast!=NULL && fast->next!=NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+
+            if(slow == fast){
+                slow = head;
+                while(slow != fast){
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+                return slow->data;
+            }
+        }
+        return 0; 
+    }
+
     void printLl(){
         Node* temp = head;
         cout << "Linked list is :" << endl;
@@ -150,7 +172,7 @@ int main(){
 
     ll.reverse();
     ll.printLl();
-
+    cout << ll.cycleInLl();
 
     return 0;
 }
