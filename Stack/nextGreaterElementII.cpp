@@ -4,7 +4,8 @@
 #include <unordered_map>
 using namespace std;
 
-// Leetcode Problem: 496. Next Greater Element I
+// Leetcode Problem: 496
+// Next Greater Element I
 
 vector<int> nextGreaterElement(vector<int> &nums1, vector<int> &nums2){
     unordered_map<int, int> map;
