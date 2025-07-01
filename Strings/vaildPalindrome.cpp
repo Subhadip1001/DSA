@@ -1,6 +1,9 @@
 #include<iostream>
 using namespace std;
 
+// LeetCode: 125
+// Valid Palindrome
+
 bool isAlphaNum(char ch){
     if((ch >= '0' && ch <= '9') || (tolower(ch) >= 'a' && tolower(ch) <= 'z')){
         return true;
@@ -12,6 +15,10 @@ bool isPalindrome(string str){
     int s = 0, e = str.length()-1;
 
     while (s<e){
+
+        // if(!isalnum(str[s])){ s++; continue;}
+        // if(!isalnum(str[e])){ e--; continue;}
+
         if(!isAlphaNum(str[s])){ s++; continue;}
         if(!isAlphaNum(str[e])){ e--; continue;}
 
