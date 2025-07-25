@@ -27,15 +27,15 @@ void getAllSubsets(vector<int>& nums, vector<int>& ans, int i, vector<vector<int
     getAllSubsets(nums, ans, idx, allSubsets);
 }
 
- vector<vector<int>> subsetsWithDup(vector<int>& nums){
+vector<vector<int>> subsetsWithDup(vector<int>& nums){
     vector<vector<int>> allSubsets;
     vector<int> ans;
-    
+
     sort(nums.begin(), nums.end());
     getAllSubsets(nums, ans, 0, allSubsets);
 
     return allSubsets;
- }
+}
 
 int main(){
     vector<int> nums = {1, 2, 2};
