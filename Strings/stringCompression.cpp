@@ -5,7 +5,7 @@
 using namespace std;
 
 // LeetCode: 443
-// String Compression
+// String Compression : ['a', 'a', 'b', 'b', 'c', 'c', 'c'] -> ['a', '2', 'b', '2', 'c', '3'] == 6(output)
 
 int compress(vector<char>& chars){
     int n = chars.size();
