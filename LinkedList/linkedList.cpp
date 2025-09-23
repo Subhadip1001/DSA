@@ -147,6 +147,18 @@ class List{
         return 0; 
     }
 
+    // GFG : Check If Circular Linked List
+    bool isCircular(Node *head){
+        if(head == NULL) return true;
+
+        Node* temp = head->next;
+        while(temp!=NULL && temp!=head){
+            temp = temp->next;
+        }
+
+        return (temp == head);
+    }
+
     void printLl(){
         Node* temp = head;
         cout << "Linked list is :" << endl;
