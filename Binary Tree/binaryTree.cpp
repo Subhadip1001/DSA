@@ -107,6 +107,16 @@ int countNode(Node*  root){
     return (leftNodes+rightNodes+1);
 }
 
+// Sum of Nodes
+int sumOfNodes(Node* root){
+    if(root == NULL) return 0;
+
+    int leftNodes = sumOfNodes(root->left);
+    int rightNodes = sumOfNodes(root->right);
+
+    return (leftNodes+rightNodes+root->data);
+}
+
 int main(){
     vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     Node* root = buildTree(preorder);
@@ -129,6 +139,8 @@ int main(){
     cout << "Height of this binary tree is : " << hightOfTree(root) << endl;
 
     cout << "Total nodes in this tree are : " << countNode(root) << endl;
+
+    cout << "Sum of the nodes is : " << sumOfNodes(root) << endl;
 
     return 0;
 }
