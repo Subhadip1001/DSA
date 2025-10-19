@@ -23,7 +23,7 @@ void productOfArray(int arr[], int s)
 
     // Suffix
     int suffix = 1;
-    for(int i=2; i>=0; i--){
+    for(int i=s-2; i>=0; i--){
         suffix *= arr[i+1];
         ans[i] *= suffix;
     }
